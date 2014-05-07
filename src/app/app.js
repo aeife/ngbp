@@ -12,7 +12,7 @@ angular.module( 'ngBoilerplate', [
       views: {
         "main": {
           controller: 'HomeCtrl',
-          templateUrl: 'home/home.tpl.html'
+          templateUrl: 'home/home.html'
         }
       },
       data:{ pageTitle: 'Home' }
@@ -22,7 +22,7 @@ angular.module( 'ngBoilerplate', [
       views: {
         "main": {
           controller: 'AboutCtrl',
-          templateUrl: 'about/about.tpl.html'
+          templateUrl: 'about/about.html'
         }
       },
       data:{ pageTitle: 'What is It?' }
