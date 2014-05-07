@@ -20,7 +20,7 @@ module.exports = function ( grunt ) {
   /**
    * Load in our build configuration file.
    */
-  var userConfig = require( './build.config.js' );
+  var userConfig = require( './config/build.config.js' );
 
   /**
    * This is the configuration object Grunt uses to give each plugin its
@@ -39,14 +39,13 @@ module.exports = function ( grunt ) {
      * pairs are evaluated based on this very configuration object.
      */
     meta: {
-      // banner:
-      //   '/**\n' +
-      //   ' * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      //   ' * <%= pkg.homepage %>\n' +
-      //   ' *\n' +
-      //   ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-      //   ' * Licensed <%= pkg.licenses.type %> <<%= pkg.licenses.url %>>\n' +
-      //   ' */\n'
+      banner:
+        '/**\n' +
+        ' * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+        ' * <%= pkg.homepage %>\n' +
+        ' *\n' +
+        ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+        ' */\n'
     },
 
     /**
@@ -55,7 +54,7 @@ module.exports = function ( grunt ) {
     changelog: {
       options: {
         dest: 'CHANGELOG.md',
-        template: 'changelog.tpl'
+        template: '.config/changelog.tpl'
       }
     },
 
@@ -173,11 +172,10 @@ module.exports = function ( grunt ) {
           banner: '<%= meta.banner %>'
         },
         src: [
-          '<%= vendor_files.js %>',
-          'module.prefix',
+          './config/module.prefix',
           '<%= build_dir %>/src/**/*.js',
           '<%= html2js.app.dest %>',
-          'module.suffix'
+          './config/module.suffix'
         ],
         dest: '<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.js'
       }
@@ -540,7 +538,7 @@ module.exports = function ( grunt ) {
   grunt.registerMultiTask( 'karmaconfig', 'Process karma config templates', function () {
     var jsFiles = filterForJS( this.filesSrc );
 
-    grunt.file.copy( 'karma/karma-unit.tpl.js', grunt.config( 'build_dir' ) + '/karma-unit.js', {
+    grunt.file.copy( 'config/karma-unit.tpl.js', grunt.config( 'build_dir' ) + '/karma-unit.js', {
       process: function ( contents, path ) {
         return grunt.template.process( contents, {
           data: {
