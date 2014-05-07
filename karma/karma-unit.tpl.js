@@ -1,6 +1,6 @@
 module.exports = function ( karma ) {
   karma.set({
-    /** 
+    /**
      * From where to look for files, starting with the location of this file.
      */
     basePath: '../',
@@ -11,16 +11,15 @@ module.exports = function ( karma ) {
     files: [
       <% scripts.forEach( function ( file ) { %>'<%= file %>',
       <% }); %>
-      'src/**/*.js',
-      'src/**/*.coffee',
+      'src/**/*.js'
     ],
     exclude: [
       'src/assets/**/*.js'
     ],
     frameworks: [ 'jasmine' ],
-    plugins: [ 'karma-jasmine', 'karma-firefox-launcher', 'karma-coffee-preprocessor' ],
+    plugins: [ 'karma-jasmine', 'karma-firefox-launcher'],
     preprocessors: {
-      '**/*.coffee': 'coffee',
+
     },
 
     /**
@@ -36,7 +35,7 @@ module.exports = function ( karma ) {
     runnerPort: 9100,
     urlRoot: '/',
 
-    /** 
+    /**
      * Disable file watching by default.
      */
     autoWatch: false,
@@ -59,4 +58,3 @@ module.exports = function ( karma ) {
     ]
   });
 };
-
