@@ -20,11 +20,10 @@ module.exports = {
    * app's unit tests.
    */
   app_files: {
-    js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
+    js: [ 'src/app/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
     jsunit: [ 'src/**/*.spec.js' ],
 
     atpl: [ 'src/app/**/*.tpl.html' ],
-    ctpl: [ 'src/common/**/*.tpl.html' ],
 
     html: [ 'src/index.html' ],
     less: 'src/less/main.less'
@@ -35,7 +34,7 @@ module.exports = {
    */
   test_files: {
     js: [
-      'vendor/angular-mocks/angular-mocks.js'
+      'src/vendor/angular-mocks/angular-mocks.js'
     ]
   },
 
@@ -59,11 +58,11 @@ module.exports = {
    */
   vendor_files: {
     js: [
-      'vendor/angular/angular.js',
-      'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
-      'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
-      'vendor/angular-ui-router/release/angular-ui-router.js',
-      'vendor/angular-ui-utils/modules/route/route.js'
+      'src/vendor/angular/angular.js',
+      'src/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+      'src/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
+      'src/vendor/angular-ui-router/release/angular-ui-router.js',
+      'src/vendor/angular-ui-utils/modules/route/route.js'
     ],
     css: [
     ],
