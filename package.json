@@ -1,8 +1,7 @@
 {
   "author": "author",
   "name": "projectname",
-  "version": "0.3.3",
-  "bugs": "https://github.com/ngbp/ngbp/issues",
+  "version": "testing",
   "repository": {
     "type": "git",
     "url": "git@github.com:aeife/ngbp.git"
